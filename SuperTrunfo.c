@@ -6,7 +6,7 @@ dados da cidade. Usarei o struct*/
 
 struct Cidade{  
  
- char código da Cidade[5]; //código da cidade (ex: Cidade A01...)
+ char codigo[5]; //código da cidade (ex: Cidade A01...)
  int populacao;
  float area;
  float pib;
@@ -23,20 +23,28 @@ struct Cidade cidade;  //variável que irá guardar a cidade          // Diferen
 // agora usaremos o printf e o scanf, para leitura e impressão de dados.
 
 printf("Digite o código da cidade (ex:A01,A02...):" );
-scanf("%s", codigo.cidade);
+scanf("%s", cidade.codigo);
                                               // o scanf irá receber dados da variável struct Cidade 
-prinf("População:" );
-scanf("%d" &cidade.populacao);
+printf("População:" );
+scanf("%d", &cidade.populacao);
 
 printf("Área (km²):" );
-scanf("%f" &cidade.area);
+scanf("%f", &cidade.area);
 
 printf("PIB:" );
-scanf("%f" &cidade.pib);
+scanf("%f", &cidade.pib);
 
 printf("Números de pontos turísticos: " );
-scanf("%d" &cidade.pontosturisticos);
+scanf("%d", &cidade.pontosturisticos);
+//AGORA VAMOS EXIBIR OS DADOS CADASTRADOS.
 
+printf("\n Dados da cidade cadastrada: \n");
+printf("Código: %s \n", cidade.codigo);
+printf("População: %d \n", cidade.populacao);
+printf("Área: %.2f km² \n", cidade.area);
+printf("PIB: %.2f \n", cidade.pib);
+printf("Pontos turísticos: %d \n" , cidade.pontosturisticos);
+return 0;
 
 
 
@@ -49,9 +57,3 @@ scanf("%d" &cidade.pontosturisticos);
 
 
 }
-
-
-
-
-
-return 0;
