@@ -22,7 +22,7 @@ struct Cidade cidade;  //variável que irá guardar a cidade          // Diferen
 
 // agora usaremos o printf e o scanf, para leitura e impressão de dados.
 
-printf("Digite o código da cidade (ex:A01,A02...):" );
+printf("Digite o código da cidade (ex:A01,A02,A03,A04):" );
 scanf("%s", cidade.codigo);
                                               // o scanf irá receber dados da variável struct Cidade 
 printf("População:" );
