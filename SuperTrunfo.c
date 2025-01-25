@@ -39,7 +39,7 @@ scanf("%d", &cidade.pontosturisticos);
 //AGORA VAMOS EXIBIR OS DADOS CADASTRADOS.
 
 printf("\n Dados da cidade cadastrada: \n");
-printf("Código: %s \n", cidade.codigo);
+printf("Código da cidade: %s \n", cidade.codigo);
 printf("População: %d \n", cidade.populacao);
 printf("Área: %.2f km² \n", cidade.area);
 printf("PIB: %.2f \n", cidade.pib);
