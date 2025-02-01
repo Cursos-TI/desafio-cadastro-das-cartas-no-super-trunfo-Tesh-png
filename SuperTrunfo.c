@@ -17,43 +17,59 @@ struct Cidade{
 
 int main(){
 
-struct Cidade cidade;  //variável que irá guardar a cidade          // Diferença em 'Cidade' com "C" e 'cidade' com "c".
+struct Cidade cidade[32];  //variável que irá guardar a cidade          
+char estados[] = "ABCDEFGH";  // Letras dos estados
+    int i, j;
+     printf("=== Cadastro das Cidades ===\n\n");
 
+     // Agora iremos cadastrar as cidades
+     for (i = 0; i < 8; i++) {  
+        for (j = 0; j < 4; j++) {  
+            int indice = i * 4 + j;
+            sprintf(cidade[indice].codigo, "%c%02d", estados[i], j + 1);
 
-// agora usaremos o printf e o scanf, para leitura e impressão de dados.
+            printf("-> Cadastro da cidade %s\n", cidade[indice].codigo);
 
-printf("Digite o código da cidade (ex:A01,A02,A03,A04):" );
-scanf("%s", cidade.codigo);
-                                              // o scanf irá receber dados da variável struct Cidade 
-printf("População:" );
-scanf("%d", &cidade.populacao);
+            printf("  População: ");
+            scanf("%d", &cidade[indice].populacao);
 
-printf("Área (km²):" );
-scanf("%f", &cidade.area);
+            printf("  Área em km²: ");                 // Aqui usamos o printf e o scanf, para leitura e impressão de dados.
 
-printf("PIB:" );
-scanf("%f", &cidade.pib);
+            scanf("%f", &cidade[indice].area);
 
-printf("Números de pontos turísticos: " );
-scanf("%d", &cidade.pontosturisticos);
+            printf("  PIB (em bilhões): ");
+            scanf("%f", &cidade[indice].pib);
+
+            printf("  Número de pontos turísticos: ");
+            scanf("%d", &cidade[indice].pontosturisticos);
+
+            printf("  Cidade %s cadastrada com sucesso!\n\n", cidade[indice].codigo);
+        }
+    }
+
 //AGORA VAMOS EXIBIR OS DADOS CADASTRADOS.
 
-printf("\n Dados da cidade cadastrada: \n");
-printf("Código da cidade: %s \n", cidade.codigo);
-printf("População: %d \n", cidade.populacao);
-printf("Área: %.2f km² \n", cidade.area);
-printf("PIB: %.2f \n", cidade.pib);
-printf("Pontos turísticos: %d \n" , cidade.pontosturisticos);
-return 0;
+printf("\n=== Lista das Cidades Cadastradas ===\n");
+    for (i = 0; i < 32; i++) {
+        printf("\nCidade %s:\n", cidade[i].codigo);
+        printf("  - População: %d habitantes\n", cidade[i].populacao);
+        printf("  - Área: %.2f km²\n", cidade[i].area);
+        printf("  - PIB: %.2f bilhões\n", cidade[i].pib);
+        printf("  - Pontos turísticos: %d\n", cidade[i].pontosturisticos);
+    }
 
+    printf("\nCadastro concluído! Boa sorte no jogo Super Trunfo!\n");
 
-
-
-
-
-
-
-
-
-
+    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
