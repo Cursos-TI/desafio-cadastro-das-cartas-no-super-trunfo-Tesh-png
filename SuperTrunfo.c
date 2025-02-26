@@ -1,56 +1,50 @@
 #include <stdio.h>
 
-
 /* Para iniciar terei que uma "estrutura" para armazenar alguns
-dados da cidade. Usarei o struct*/
+dados da cidade. Usarei o struct */
 
-struct Cidade{  
- 
- char codigo[5]; //código da cidade (ex: Cidade A01...)
- int populacao;
- float area;
- float pib;
- int pontosturisticos;
+struct Cidade {  
+    char codigo[5]; // código da cidade (ex: A01, B02...)
+    int populacao;
+    float area;
+    float pib;
+    int pontosturisticos;
 
-/*  Aqui estão alguns dados que foram dedidos para fazer o jogo*/
+/*  Aqui estão alguns dados que foram pedidos para fazer o jogo */
 };
 
-int main(){
+int main() {
+    struct Cidade cidade[2]; // variável que irá guardar as cidades
+    int i;
 
-struct Cidade cidade[32];  //variável que irá guardar a cidade          
-char estados[] = "ABCDEFGH";  // Letras dos estados
-    int i, j;
-     printf("=== Cadastro das Cidades ===\n\n");
+    printf("=== Cadastro das Cidades ===\n\n");
 
-     // Agora iremos cadastrar as cidades
-     for (i = 0; i < 8; i++) {  
-        for (j = 0; j < 4; j++) {  
-            int indice = i * 4 + j;
-            sprintf(cidade[indice].codigo, "%c%02d", estados[i], j + 1);
+    // Agora iremos cadastrar as cidades 
+    for (i = 0; i < 2; i++) {  
+        printf("-> Cadastro da cidade %d\n", i + 1);
 
-            printf("-> Cadastro da cidade %s\n", cidade[indice].codigo);
+        printf("  Código da cidade: ");
+        scanf("%s", cidade[i].codigo);
 
-            printf("  População: ");
-            scanf("%d", &cidade[indice].populacao);
+        printf("  População: ");
+        scanf("%d", &cidade[i].populacao);
 
-            printf("  Área em km²: ");                 // Aqui usamos o printf e o scanf, para leitura e impressão de dados.
+        printf("  Área em km²: ");  // Aqui usamos o printf e o scanf, para leitura e impressão de dados.
+        scanf("%f", &cidade[i].area);
 
-            scanf("%f", &cidade[indice].area);
+        printf("  PIB (em bilhões): ");
+        scanf("%f", &cidade[i].pib);
 
-            printf("  PIB (em bilhões): ");
-            scanf("%f", &cidade[indice].pib);
+        printf("  Número de pontos turísticos: ");
+        scanf("%d", &cidade[i].pontosturisticos);
 
-            printf("  Número de pontos turísticos: ");
-            scanf("%d", &cidade[indice].pontosturisticos);
-
-            printf("  Cidade %s cadastrada com sucesso!\n\n", cidade[indice].codigo);
-        }
+        printf("  Cidade %s cadastrada com sucesso!\n\n", cidade[i].codigo);
     }
 
-//AGORA VAMOS EXIBIR OS DADOS CADASTRADOS.
+    // AGORA VAMOS EXIBIR OS DADOS CADASTRADOS.
 
-printf("\n=== Lista das Cidades Cadastradas ===\n");
-    for (i = 0; i < 32; i++) {
+    printf("\n=== Lista das Cidades Cadastradas ===\n");
+    for (i = 0; i < 2; i++) {
         printf("\nCidade %s:\n", cidade[i].codigo);
         printf("  - População: %d habitantes\n", cidade[i].populacao);
         printf("  - Área: %.2f km²\n", cidade[i].area);
@@ -58,18 +52,7 @@ printf("\n=== Lista das Cidades Cadastradas ===\n");
         printf("  - Pontos turísticos: %d\n", cidade[i].pontosturisticos);
     }
 
-    printf("\nCadastro concluído! Boa sorte no jogo Super Trunfo!\n");
+    printf("\nCadastro concluído!\n");
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
