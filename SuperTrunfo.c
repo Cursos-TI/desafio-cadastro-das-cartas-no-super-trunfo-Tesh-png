@@ -113,15 +113,18 @@ int main()
 
     printf("\nCadastro concluído!\n");
 
-    printf("\n==== Comparação das Cartas ====\n");
+    printf("\n==== Comparação das cartas ====\n");
+ 
+    // Comparação baseada na População das cidades 
 
-    printf("População: Carta %d venceu (%d)\n", populacao1 > populacao2 ? 1 : 2, populacao1 > populacao2);
-    printf("Área: Carta %d venceu (%d)\n", area1 > area2 ? 1 : 2, area1 > area2);
-    printf("PIB: Carta %d venceu (%d)\n", pib1 > pib2 ? 1 : 2, pib1 > pib2);
-    printf("Pontos Turísticos: Carta %d venceu (%d)\n", pontosturisticos1 > pontosturisticos2 ? 1 : 2, pontosturisticos1 > pontosturisticos2);
-    printf("Densidade Populacional: Carta %d venceu (%d)\n", densidade1 < densidade2 ? 1 : 2, densidade1 < densidade2);
-    printf("PIB per Capita: Carta %d venceu (%d)\n", pib_per_capita1 > pib_per_capita2 ? 1 : 2, pib_per_capita1 > pib_per_capita2);
-    printf("Super Poder: Carta %d venceu (%d)\n", super_poder1 > super_poder2 ? 1 : 2, super_poder1 > super_poder2);
+    printf("\n Comparação de cartas (Atributos : População ) :\n");
+    printf("Carta 1 - %s (%s) %d habitantes \n", cidade1, estado1, populacao1);
+    printf("Carta 2 - %s (%s) %d habitantes \n", cidade2, estado2, populacao2);
 
+    if(populacao1 > populacao2){
+        printf("Resultado: População da carta 1 venceu !\n");
+    } else {
+        printf("Resultado: População da carta 2 venceu !\n");
+    }
     return 0;
 }
